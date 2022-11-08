@@ -96,7 +96,7 @@ namespace Dictionary
 
             userList.Add(U1);userList.Add(U2);userList.Add(U3);
 
-            Dictionary<int,string> listToDict = userList.ToDictionary(x => x.Id, x => x.Name);
+            Dictionary<int,User> listToDict = userList.ToDictionary(x => x.Id, x => x);
 
             foreach (var dFL in listToDict)
             {
