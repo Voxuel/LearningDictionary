@@ -58,23 +58,27 @@ namespace Dictionary
             //    Console.WriteLine(i);
             //}
 
-            Console.WriteLine("Contains");
+            Console.WriteLine("contains");
             Console.WriteLine("----------------");
 
             if (!users.ContainsKey(105))
             {
-                users.Add(105,new User { Id = 105, Name = "Sam"});
+                users.Add(105, new User { Id = 105,  Name = "Sam" });
             }
-            foreach (var item in users.Values)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in users.Values)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            User ValUser;
+            var found = users.TryGetValue(105, out ValUser);
+            Console.WriteLine(ValUser.ToString());
+
+
+            Console.WriteLine(users.Count);
+            Console.WriteLine(users.Count(n => n.Value.Name == "Sam"));
 
 
 
-
-
-           
 
 
 
@@ -90,7 +94,7 @@ namespace Dictionary
 
         public override string ToString()
         {
-            return Name;
+            return Id + "  " + Name;
         }
     }
 }
