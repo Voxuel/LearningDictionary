@@ -34,28 +34,40 @@ namespace Dictionary
             users.Add(U1.Id, U1);
             users.Add(U2.Id, U2);
             users.Add(U3.Id, U3);
-            int counter = 100;
-            foreach (var user in users.Keys)
-            {        
-                Console.WriteLine(users.First(x => x.Key == counter));
-                counter++;
-            }
-            foreach (User item in users.Values)
-            {
-                Console.WriteLine($"{item.Name}");
-            }
-            foreach (int key in users.Keys)
-            {
-                Console.WriteLine(key);
-            }
-            var specify =
-                from user in users
-                where user.Value.Id == 101
-                select user;
+            //int counter = 100;
+            //foreach (var user in users.Keys)
+            //{        
+            //    Console.WriteLine(users.First(x => x.Key == counter));
+            //    counter++;
+            //}
+            //foreach (User item in users.Values)
+            //{
+            //    Console.WriteLine($"{item.Name}");
+            //}
+            //foreach (int key in users.Keys)
+            //{
+            //    Console.WriteLine(key);
+            //}
+            //var specify =
+            //    from user in users
+            //    where user.Value.Id == 101
+            //    select user;
 
-            foreach (var i in specify)
+            //foreach (var i in specify)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            Console.WriteLine("Contains");
+            Console.WriteLine("----------------");
+
+            if (!users.ContainsKey(105))
             {
-                Console.WriteLine(i);
+                users.Add(105,new User { Id = 105, Name = "Sam"});
+            }
+            foreach (var item in users.Values)
+            {
+                Console.WriteLine(item);
             }
 
 
