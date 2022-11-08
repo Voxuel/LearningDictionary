@@ -63,24 +63,45 @@ namespace Dictionary
 
             if (!users.ContainsKey(105))
             {
-                users.Add(105, new User { Id = 105,  Name = "Sam" });
+                users.Add(105, new User { Id = 105, Name = "Sam" });
             }
             //foreach (var item in users.Values)
             //{
             //    Console.WriteLine(item);
             //}
-            User ValUser;
-            var found = users.TryGetValue(105, out ValUser);
-            Console.WriteLine(ValUser.ToString());
+            //User ValUser;
+            //var found = users.TryGetValue(105, out ValUser);
+            //Console.WriteLine(ValUser.ToString());
 
 
-            Console.WriteLine(users.Count);
-            Console.WriteLine(users.Count(n => n.Value.Name == "Sam"));
+            //Console.WriteLine(users.Count);
+            //Console.WriteLine(users.Count(n => n.Value.Name == "Sam"));
 
 
 
 
+            //var UArr = new User[3];
+            //UArr[0] = U1;UArr[1] = U2;UArr[2] = U3;
 
+            //Dictionary<int, User> ArrToDict = UArr.ToDictionary(us => us.Id, us => us);
+
+            //foreach (var item in ArrToDict)
+            //{
+            //    Console.WriteLine(item.ToString());
+            //}
+
+
+
+            var userList = new List<User>();
+
+            userList.Add(U1);userList.Add(U2);userList.Add(U3);
+
+            Dictionary<int,string> listToDict = userList.ToDictionary(x => x.Id, x => x.Name);
+
+            foreach (var dFL in listToDict)
+            {
+                Console.WriteLine(dFL);
+            }
 
 
         }
